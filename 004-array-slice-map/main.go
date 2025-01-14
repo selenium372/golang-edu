@@ -91,6 +91,21 @@ func main() {
 
 	// Map examples
 	// Declare and initialize a map
+
+	var m1 map[string]int
+	//v1, exists = m1["eee"]
+	for k, v := range m1 {
+
+		fmt.Printf("Key: %v, Value: %v\n", k, v)
+	}
+	m1["dddd"] = 2
+	v, e := m1["ddd"]
+	fmt.Printf("Key: %v, Value: %v\n", v, e)
+
+	_ = make(map[User]int)
+	m1["aaa"] = 100
+	_ = m1["eee"]
+
 	m := map[string]int{
 		"apple":  10,
 		"banana": 20,
@@ -125,4 +140,9 @@ func main() {
 
 	fmt.Println("-----------------------------------------------------------------------------------")
 
+}
+
+type User struct {
+	a, b int
+	c    [5]string
 }
