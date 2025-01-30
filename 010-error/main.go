@@ -71,6 +71,25 @@ func step2() error {
 	return ErrStep2
 }
 
+func simple(a int) (int, error) {
+	// a > 10 -> a*2, nil
+	// a <= 10 - 0, "A less/eq than 10"
+	if a > 10 {
+		return a * 2, nil
+	} else {
+		return 0, errors.New("A less/eq than 10")
+	}
+}
+
+//func main() {
+//	a, err := simple(1)
+//	if err != nil {
+//		fmt.Println(err)
+//		return
+//	}
+//	fmt.Println(a)
+//}
+
 func main() {
 
 	fmt.Println("-----------------------------------------------------------------------------------")

@@ -21,7 +21,7 @@ func worker1(id int, done chan bool) {
 }
 
 func worker2(id int, wg *sync.WaitGroup) {
-	defer wg.Done() // Signal that this goroutine is done
+	defer wg.Add(-1) // Signal that this goroutine is done
 	fmt.Printf("Worker %d: Working...\n", id)
 	time.Sleep(time.Second)
 	fmt.Printf("Worker %d: Done\n", id)
